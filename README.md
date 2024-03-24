@@ -1,1 +1,3 @@
-# Componente carrusel para React, con Typescript y Styled Components
+# Componente carrusel para React
+
+Con Typescript y Styled Components
