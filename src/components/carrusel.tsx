@@ -8,11 +8,9 @@ type Image = {
 
 export function Carrusel(props: { images: Image[] }) {
   const cuantas = props.images.length - 1;
-  const [puntero, setPuntero] = useState(0);
-  const [src, setSrc] = useState(
-    "https://cdn.dribbble.com/users/1244169/screenshots/10734151/cycle_loading_3.gif"
-  );
-  const [alt, setAlt] = useState("ten paciencia");
+  const [puntero, setPuntero] = useState(1);
+  const [src, setSrc] = useState(props.images[0].src);
+  const [alt, setAlt] = useState(props.images[0].alt);
   const [loaded, setLoaded] = useState(false);
   const Carrusel = styled.section`
     display: flex;
@@ -20,7 +18,8 @@ export function Carrusel(props: { images: Image[] }) {
     justify-content: center;
     height: 100vh;
   `;
-
+  console.log(cuantas);
+  console.log(props.images[puntero]);
   const SliderImg = styled.img`
     width: 75%;
     aspect-ratio: 16/9;
